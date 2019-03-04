@@ -1,0 +1,28 @@
+phase 1:
+Set title.
+Set date.
+Set description.
+
+phase 2:
+Add tasks
+
+phase 3 (optional, only in the future):
+Set new ideas.
+
+Commands (PS: Show ".", user don't need to type that):
+> Document state.
+.p1
+.title <title>
+.date <date>
+.description <description>
+.p2
+.addtask
+.altertask
+.finish
+
+> Task state.
+t.title <title>
+t.description <description>
+t.completion <completion %>
+t.notes <note>
+t.end
