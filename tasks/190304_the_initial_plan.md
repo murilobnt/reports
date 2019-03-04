@@ -21,13 +21,15 @@ about what exactly I am going to create.*
 
 ---
 
-## Define the output of the application
+### Define the output of the application
 
 Build an example of a desired output of the application. This will contribute to think about how the application will work.
 
 **Completion:** 100%.
 
-## Define classes
+---
+
+### Define classes
 
 Create the classes needed for basic operation.
 
@@ -35,7 +37,9 @@ Create the classes needed for basic operation.
 
 **Notes:** Probably won't be completed soon haha.
 
-## Get a Makefile
+---
+
+### Get a Makefile
 
 I don't want to recompile everything on hand everytime.
 
