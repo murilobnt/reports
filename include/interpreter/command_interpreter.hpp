@@ -12,7 +12,7 @@ protected:
 
 public:
   CommandInterpreter(Application *application, Document *document);
-  virtual bool interpret(std::string input) = 0;
+  virtual bool interpret(std::string command, std::string content) = 0;
   virtual std::string get_state_marker() = 0;
 };
 

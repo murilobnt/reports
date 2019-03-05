@@ -23,7 +23,9 @@ void Application::run() {
       command = input;
     }
 
-    // command_interpreter->interpret(command);
+    std::cout << (command_interpreter->interpret(command, content) ? "OK."
+                                                                   : "Error.")
+              << std::endl;
   }
   finish();
 }
