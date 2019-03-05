@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "document_section.hpp"
+#include "section/document_section.hpp"
 
 struct Header : DocumentSection {
   std::string title;

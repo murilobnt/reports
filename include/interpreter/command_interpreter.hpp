@@ -3,13 +3,17 @@
 
 #include "document.hpp"
 
+class Application;
+
 class CommandInterpreter {
-private:
+protected:
+  Application *application;
   Document *document;
 
 public:
-  CommandInterpreter(Document *document);
+  CommandInterpreter(Application *application, Document *document);
   virtual bool interpret(std::string input) = 0;
+  virtual std::string get_state_marker() = 0;
 };
 
 #endif

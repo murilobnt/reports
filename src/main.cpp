@@ -1,1 +1,7 @@
-int main() { return 0; }
+#include "application/application.hpp"
+
+int main() {
+  Application application;
+  application.run();
+  return 0;
+}

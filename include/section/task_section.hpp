@@ -3,8 +3,8 @@
 
 #include <vector>
 
-#include "document_section.hpp"
-#include "task.hpp"
+#include "section/document_section.hpp"
+#include "section/task.hpp"
 
 struct TaskSection : DocumentSection {
   std::vector<Task> tasks;

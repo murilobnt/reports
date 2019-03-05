@@ -3,9 +3,9 @@
 
 #include <string>
 
-#include "header.hpp"
-#include "task.hpp"
-#include "task_section.hpp"
+#include "section/header.hpp"
+#include "section/task.hpp"
+#include "section/task_section.hpp"
 
 class Document {
 private:

@@ -1,7 +1,3 @@
-#### Note: You must have compiled the engine.
-#### To do so, go to the directory above, through console,
-#### and type make.
-
 CC = g++
 RM = rm -f
 
