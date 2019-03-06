@@ -10,12 +10,7 @@ about what exactly I am going to create.*
 
 ## Summary
 
-### Concept
-
 - [x] [Define the output of the application.](#define-the-output-of-the-application)
-
-### Application
-
 - [ ] [Define classes.](#define-clases)
 - [ ] [Get a Makefile.](#get-a-makefile)
 

@@ -10,7 +10,7 @@ struct Header : DocumentSection {
   std::string date;
   std::string description;
 
-  bool is_section_complete();
+  bool is_section_complete() const;
 };
 
 #endif

@@ -9,7 +9,7 @@
 struct TaskSection : DocumentSection {
   std::vector<Task> tasks;
 
-  bool is_section_complete();
+  bool is_section_complete() const;
 };
 
 #endif

@@ -2,6 +2,7 @@
 #define DOCUMENT_HPP
 
 #include <string>
+#include <vector>
 
 #include "section/header.hpp"
 #include "section/task.hpp"
@@ -13,18 +14,22 @@ private:
   TaskSection task_section;
 
 public:
-  std::string get_title();
   void set_title(std::string title);
-  std::string get_date();
   void set_date(std::string date);
-  std::string get_description();
   void set_description(std::string description);
-
   void add_task(Task task);
 
-  bool is_complete();
-  bool is_header_complete();
-  bool is_tasks_complete();
+  Header get_header() const;
+  TaskSection get_task_section() const;
+  std::vector<Task> get_tasks() const;
+
+  std::string get_title() const;
+  std::string get_date() const;
+  std::string get_description() const;
+
+  bool is_complete() const;
+  bool is_header_complete() const;
+  bool is_tasks_complete() const;
 };
 
 #endif

@@ -6,3 +6,8 @@ CommandInterpreter::CommandInterpreter(Application *application,
   this->application = application;
   this->document = document;
 }
+
+void CommandInterpreter::set_document_printer(
+    DocumentPrinter *document_printer) {
+  this->document_printer = document_printer;
+}

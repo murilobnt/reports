@@ -2,7 +2,7 @@
 #define DOCUMENT_SECTION_HPP
 
 struct DocumentSection {
-  virtual bool is_section_complete() = 0;
+  virtual bool is_section_complete() const = 0;
 };
 
 #endif

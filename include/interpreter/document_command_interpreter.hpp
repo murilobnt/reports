@@ -10,6 +10,8 @@ class DocumentCommandInterpreter : public CommandInterpreter {
 private:
   DocumentCommand string_to_command(std::string m_string);
   void p1();
+  void p2();
+  void finish();
 
 public:
   DocumentCommandInterpreter(Application *application, Document *document);

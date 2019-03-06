@@ -4,7 +4,11 @@ Application::Application() {
   command_interpreter = new DocumentCommandInterpreter(this, &document);
 }
 
-void Application::run() {
+Application::Application(CommandInterpreter *command_interpreter) {
+  this->command_interpreter = command_interpreter;
+}
+
+void Application::private_run() {
   while (true) {
     std::string input;
     char delimiter = ' ';
@@ -27,6 +31,20 @@ void Application::run() {
                                                                    : "Error.")
               << std::endl;
   }
+}
+
+void Application::run() {
+  DocumentPrinter *document_printer = new MBNTMarkdownPrinter();
+  command_interpreter->set_document_printer(document_printer);
+  private_run();
+  delete document_printer;
+  finish();
+}
+
+void Application::run(DocumentPrinter *document_printer) {
+  command_interpreter->set_document_printer(document_printer);
+  private_run();
+  delete document_printer;
   finish();
 }
 

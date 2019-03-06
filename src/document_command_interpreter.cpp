@@ -39,6 +39,33 @@ void DocumentCommandInterpreter::p1() {
   document->set_description(description);
 }
 
+void DocumentCommandInterpreter::p2() {
+  std::string choice = "n";
+  do {
+    Task task;
+
+    std::cout << "Title: ";
+    std::getline(std::cin, task.title);
+    std::cout << "Description: ";
+    std::getline(std::cin, task.description);
+    std::cout << "Completion % (number only): ";
+    std::cin >> task.completion;
+    std::cin.ignore();
+    std::cout << "Notes: ";
+    std::getline(std::cin, task.notes);
+    document->add_task(task);
+    std::cout << "Add more? (y/N): ";
+    std::getline(std::cin, choice);
+  } while (choice == "y");
+}
+
+void DocumentCommandInterpreter::finish() {
+  std::string file_name;
+  std::cout << "Name of the file: " << std::endl;
+  std::getline(std::cin, file_name);
+  document_printer->print_document(file_name, *document);
+}
+
 bool DocumentCommandInterpreter::interpret(std::string command,
                                            std::string content) {
   switch (string_to_command(command)) {
@@ -46,7 +73,7 @@ bool DocumentCommandInterpreter::interpret(std::string command,
     p1();
     break;
   case P2:
-    return false;
+    p2();
     break;
   case TITLE:
     if (content == "")
@@ -70,7 +97,7 @@ bool DocumentCommandInterpreter::interpret(std::string command,
     return false;
     break;
   case FINISH:
-    return false;
+    finish();
     break;
   case STATUS:
     std::cout << "Header status: "
