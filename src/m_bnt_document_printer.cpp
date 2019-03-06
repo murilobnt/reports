@@ -53,8 +53,8 @@ void MBNTMarkdownPrinter::print_tasks(const TaskSection &task_s) {
 
     if ((*it).notes != "") {
       print_markdown_line(
-          "Notes: " + (*it).notes +
-          ((*it).notes[(*it).notes.length() - 1] == '.' ? "" : "."));
+          "**Notes:** *" + (*it).notes +
+          ((*it).notes[(*it).notes.length() - 1] == '.' ? "" : ".") + "*");
     }
     print_markdown_line("---");
   }
