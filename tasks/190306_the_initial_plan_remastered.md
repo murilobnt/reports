@@ -16,27 +16,26 @@
 
 ### Define the output of the application
 
-Build an example of a desired output of the application. I've already done this before so, eh, I'm just going to put it as 100% again.
+![task0_completion](http://progressed.io/bar/100)
 
-**Completion:** ![task0_completion](http://progressed.io/bar/100)
+Build an example of a desired output of the application. I've already done this before so, eh, I'm just going to put it as 100% again.
 
 ---
 
 ### Define classes
 
-Create the classes needed for basic operation.
+![task1_completion](http://progressed.io/bar/100)
 
-**Completion:** ![task1_completion](http://progressed.io/bar/100)
+Create the classes needed for basic operation.
 
 ---
 
 ### Get a Makefile
 
+![task2_completion](http://progressed.io/bar/100)
+
 I don't want to recompile everything on hand everytime.
 
-**Completion:** ![task2_completion](http://progressed.io/bar/100)
-
-Notes: Took it from another project.
+**Notes:** *Took it from another project.*
 
 ---
-

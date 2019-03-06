@@ -44,12 +44,12 @@ void MBNTMarkdownPrinter::print_tasks(const TaskSection &task_s) {
   for (std::vector<Task>::const_iterator it = task_s.tasks.begin();
        it != task_s.tasks.end(); ++it) {
     print_markdown_line("### " + (*it).title);
+    print_markdown_line("![task" + (std::to_string(i++)) +
+                        "_completion](http://progressed.io/bar/" +
+                        std::to_string((*it).completion) + ")");
     print_markdown_line(
         (*it).description +
         ((*it).description[(*it).description.length() - 1] == '.' ? "" : "."));
-    print_markdown_line("**Completion:** ![task" + (std::to_string(i++)) +
-                        "_completion](http://progressed.io/bar/" +
-                        std::to_string((*it).completion) + ")");
 
     if ((*it).notes != "") {
       print_markdown_line(
