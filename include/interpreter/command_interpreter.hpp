@@ -1,6 +1,7 @@
 #ifndef COMMAND_INTERPRETER_HPP
 #define COMMAND_INTERPRETER_HPP
 
+#include "command/command.hpp"
 #include "document.hpp"
 #include "printer/document_printer.hpp"
 
@@ -11,6 +12,7 @@ protected:
   Application *application;
   Document *document;
   DocumentPrinter *document_printer;
+  // std::vector < std::pair<std::string, Command *> commands;
 
 public:
   CommandInterpreter(Application *application, Document *document);
