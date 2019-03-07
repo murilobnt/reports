@@ -1,1 +1,55 @@
-Under construction **wink wink**
+# Reports
+
+A tool for writing reports for code repositories.
+
+## Description
+
+**Reports**, or **Results Presentation**, is a tool that aims to
+abstract the process of writing a periodic reports, so there would be no need to worry
+about styles or any document syntax, but the information it will contain.
+
+## Requires
+
+-   [GCC.](http://gcc.gnu.org)
+
+## Compile and Execute
+
+Once you download this project or clone this repository, you might want to
+compile the code. To do so, go to the root directory of the project, through terminal,
+and enter the following command:
+
+```
+make
+```
+
+If no errors occured, still at the root of the project:
+
+```
+./bin/results_presentation
+```
+
+## Usage
+
+While in execution, you might see a "." in the terminal. So, you may enter the following commands,
+in this order:
+
+### p1
+
+p1 is the command that represents the "process 1" for writing the document. You will be prompted to enter the title, date and description of your document.
+
+### p2
+
+This command will prompt you about the Title, Description, Completion and Notes of a certain task. You may continue adding more tasks at the end of it.
+
+### finish
+
+If the document is ready, this command will prompt you an output file name. Once executed, a new file will probably be created with the name you specified, at the root of the project.
+
+## Considerations
+
+This project is at its initial state. If you want to try to break it, you'll possibly
+succeed. If so, the outcome is unpredictable, for me.
+
+## License
+
+Reports is licensed under the [MIT License](https://github.com/murilobnt/reports/blob/master/LICENSE).
