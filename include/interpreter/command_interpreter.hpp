@@ -1,24 +1,22 @@
 #ifndef COMMAND_INTERPRETER_HPP
 #define COMMAND_INTERPRETER_HPP
 
+#include <map>
+#include <string>
+
 #include "command/command.hpp"
-#include "document.hpp"
-#include "printer/document_printer.hpp"
 
 class Application;
 
 class CommandInterpreter {
 protected:
-  Application *application;
-  Document *document;
-  DocumentPrinter *document_printer;
-  // std::vector < std::pair<std::string, Command *> commands;
+  std::map<std::string, Command *> commands;
+  std::string state_marker;
 
 public:
-  CommandInterpreter(Application *application, Document *document);
-  virtual bool interpret(std::string command, std::string content) = 0;
-  virtual std::string get_state_marker() = 0;
-  void set_document_printer(DocumentPrinter *document_printer);
+  bool interpret(std::string command, std::string content);
+  void set_state_marker(std::string state_marker);
+  std::string get_state_marker();
 };
 
 #endif

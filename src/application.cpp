@@ -1,14 +1,6 @@
 #include "application/application.hpp"
 
-Application::Application() {
-  command_interpreter = new DocumentCommandInterpreter(this, &document);
-}
-
-Application::Application(CommandInterpreter *command_interpreter) {
-  this->command_interpreter = command_interpreter;
-}
-
-void Application::private_run() {
+void Application::run(CommandInterpreter *command_interpreter) {
   while (true) {
     std::string input;
     char delimiter = ' ';
@@ -32,25 +24,3 @@ void Application::private_run() {
               << std::endl;
   }
 }
-
-void Application::run() {
-  DocumentPrinter *document_printer = new MBNTMarkdownPrinter();
-  command_interpreter->set_document_printer(document_printer);
-  private_run();
-  delete document_printer;
-  finish();
-}
-
-void Application::run(DocumentPrinter *document_printer) {
-  command_interpreter->set_document_printer(document_printer);
-  private_run();
-  delete document_printer;
-  finish();
-}
-
-void Application::set_command_interpreter(
-    CommandInterpreter *command_interpreter) {
-  this->command_interpreter = command_interpreter;
-}
-
-void Application::finish() { delete command_interpreter; }
