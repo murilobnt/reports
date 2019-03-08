@@ -1,8 +1,11 @@
 #include "command/command_p2.hpp"
 
-CommandP2::CommandP2(Document *document) { this->document = document; }
+CommandP2::CommandP2(std::string description, Document *document)
+    : MBNTCommand(description) {
+  this->document = document;
+}
 
-void CommandP2::run_command(std::string content) {
+bool CommandP2::run_command(std::string content) {
   std::string choice = "n";
   do {
     Task task;
@@ -26,4 +29,5 @@ void CommandP2::run_command(std::string content) {
     std::cout << "Add more? (y/N): ";
     std::getline(std::cin, choice);
   } while (choice == "y");
+  return true;
 }

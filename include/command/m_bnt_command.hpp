@@ -6,6 +6,7 @@
 #include "application/application.hpp"
 #include "command/command.hpp"
 #include "document.hpp"
+#include "interpreter/command_interpreter.hpp"
 #include "printer/document_printer.hpp"
 
 class MBNTCommand : public Command {
@@ -13,9 +14,11 @@ protected:
   Application *application;
   Document *document;
   DocumentPrinter *document_printer;
+  CommandInterpreter *command_interpreter;
 
 public:
-  virtual void run_command(std::string content) = 0;
+  MBNTCommand(std::string description);
+  virtual bool run_command(std::string content) = 0;
 };
 
 #endif

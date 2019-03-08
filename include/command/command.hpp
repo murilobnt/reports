@@ -4,8 +4,13 @@
 #include <string>
 
 class Command {
+private:
+  std::string description;
+
 public:
-  virtual void run_command(std::string content) = 0;
+  Command(std::string description);
+  std::string get_description() const;
+  virtual bool run_command(std::string content) = 0;
 };
 
 #endif

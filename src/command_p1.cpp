@@ -1,8 +1,11 @@
 #include "command/command_p1.hpp"
 
-CommandP1::CommandP1(Document *document) { this->document = document; }
+CommandP1::CommandP1(std::string description, Document *document)
+    : MBNTCommand(description) {
+  this->document = document;
+}
 
-void CommandP1::run_command(std::string content) {
+bool CommandP1::run_command(std::string content) {
   std::string title, date, description;
   std::cout << "Title: ";
   std::getline(std::cin, title);
@@ -13,4 +16,5 @@ void CommandP1::run_command(std::string content) {
   document->set_title(title);
   document->set_date(date);
   document->set_description(description);
+  return true;
 }

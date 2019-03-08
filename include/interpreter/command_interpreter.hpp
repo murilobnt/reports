@@ -16,7 +16,8 @@ protected:
 public:
   bool interpret(std::string command, std::string content);
   void set_state_marker(std::string state_marker);
-  std::string get_state_marker();
+  std::string get_state_marker() const;
+  std::map<std::string, Command *> get_commands() const;
 };
 
 #endif

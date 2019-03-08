@@ -6,12 +6,17 @@ bool CommandInterpreter::interpret(std::string command, std::string content) {
   if (it == commands.end())
     return false;
 
-  it->second->run_command(content);
-  return true;
+  return it->second->run_command(content);
 }
 
 void CommandInterpreter::set_state_marker(std::string state_marker) {
   this->state_marker = state_marker;
 }
 
-std::string CommandInterpreter::get_state_marker() { return state_marker; }
+std::string CommandInterpreter::get_state_marker() const {
+  return state_marker;
+}
+
+std::map<std::string, Command *> CommandInterpreter::get_commands() const {
+  return commands;
+}

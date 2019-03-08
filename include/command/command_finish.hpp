@@ -5,8 +5,9 @@
 
 class CommandFinish : public MBNTCommand {
 public:
-  CommandFinish(Document *document, DocumentPrinter *document_printer);
-  void run_command(std::string content = "");
+  CommandFinish(std::string description, Document *document,
+                DocumentPrinter *document_printer);
+  bool run_command(std::string content = "");
 };
 
 #endif

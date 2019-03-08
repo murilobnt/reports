@@ -5,8 +5,8 @@
 
 class CommandP1 : public MBNTCommand {
 public:
-  CommandP1(Document *document);
-  void run_command(std::string content = "");
+  CommandP1(std::string description, Document *document);
+  bool run_command(std::string content = "");
 };
 
 #endif
