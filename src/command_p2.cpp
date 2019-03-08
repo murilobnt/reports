@@ -7,6 +7,7 @@ CommandP2::CommandP2(std::string description, Document *document)
 
 bool CommandP2::run_command(std::string content) {
   std::string choice = "n";
+  std::cout << "Submit a task." << std::endl;
   do {
     Task task;
 

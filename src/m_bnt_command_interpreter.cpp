@@ -16,7 +16,8 @@ MBNTCommandInterpreter::MBNTCommandInterpreter(
           "Interactive phase 2, relative to the document's tasks section. "
           "Prompts the user to enter a task's title, description, completion, "
           "description, and the will to add more tasks. The user may enter "
-          "cancel to cancel the task addition operation.",
+          "cancel to cancel the task addition operation (except if the "
+          "completion field is being prompted).",
           document)));
   commands.insert(std::pair<std::string, Command *>(
       "finish",
