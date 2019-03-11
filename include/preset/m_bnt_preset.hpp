@@ -7,7 +7,7 @@
 
 class MBNTPreset {
 public:
-  static void run();
+  static void run(Language language);
 };
 
 #endif
