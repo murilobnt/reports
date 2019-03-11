@@ -6,12 +6,14 @@
 #include <string>
 
 #include "document.hpp"
+#include "enum/language.hpp"
 #include "printer/document_printer.hpp"
 #include "section/header.hpp"
 #include "section/task_section.hpp"
 
 class MBNTMarkdownPrinter : public DocumentPrinter {
 private:
+  Language language;
   std::ofstream ofstr;
   void print_markdown_line(std::string line, int spaces = 2);
   void replace(std::string &m_string, char what, char to);
@@ -20,6 +22,7 @@ private:
   void print_tasks(const TaskSection &task_s);
 
 public:
+  MBNTMarkdownPrinter(Language language = ENGLISH);
   void print_document(std::string file_name, const Document &document);
 };
 

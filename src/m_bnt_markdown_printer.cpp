@@ -1,5 +1,9 @@
 #include "printer/m_bnt_markdown_printer.hpp"
 
+MBNTMarkdownPrinter::MBNTMarkdownPrinter(Language language) {
+  this->language = language;
+}
+
 void MBNTMarkdownPrinter::print_markdown_line(std::string line, int spaces) {
   ofstr << line;
   for (int i = 0; i < spaces; ++i)
@@ -23,7 +27,10 @@ void MBNTMarkdownPrinter::print_header(const Header &header) {
 }
 
 void MBNTMarkdownPrinter::print_summary(const TaskSection &task_s) {
-  print_markdown_line("## Summary");
+  (language == ENGLISH
+       ? print_markdown_line("## Summary")
+       : language == PORTUGUESE ? print_markdown_line("## Sumário")
+                                : print_markdown_line("## Summary"));
   for (std::vector<Task>::const_iterator it = task_s.tasks.begin();
        it != task_s.tasks.end(); ++it) {
     std::string index = (*it).title;
@@ -52,8 +59,12 @@ void MBNTMarkdownPrinter::print_tasks(const TaskSection &task_s) {
         ((*it).description[(*it).description.length() - 1] == '.' ? "" : "."));
 
     if ((*it).notes != "") {
+      std::string label =
+          (language == ENGLISH
+               ? "Notes"
+               : language == PORTUGUESE ? "Observações" : "Notes");
       print_markdown_line(
-          "**Notes:** *" + (*it).notes +
+          "**" + label + ":** *" + (*it).notes +
           ((*it).notes[(*it).notes.length() - 1] == '.' ? "" : ".") + "*");
     }
     print_markdown_line("---");
